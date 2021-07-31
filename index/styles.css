@@ -1,0 +1,757 @@
+/* Universal selector*/
+* {
+  margin: 0px;
+  padding: 0%;
+
+}
+body {
+  background: #000;
+}
+
+/* Type selector*/
+header{
+  background: #000;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  text-decoration: none;
+ 
+}
+
+/* Type selector*/
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0%;
+  transform: scale(1,0);
+  transform-origin:top ;
+  transition: transform 400ms ease-in-out;
+
+}
+
+
+/* descendent selector unordered*/
+
+nav ul{
+  margin: 0%;
+  padding: 0;
+  list-style: none;
+}
+
+/* descendent selector li*/
+
+nav li{
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+/* descendent selector a*/
+
+nav a{
+ color: #CAC9C7;
+ text-decoration: none;
+ font-size: 1.2rem;
+ font-family: 'Varela', sans-serif;
+ opacity: 0;
+ transition: opacity 150ms ease-in-out ;
+ margin-left: 20px;
+
+}
+
+nav a:hover{
+  color:#CAC9C7
+}
+/* proceeeding Sibling*/
+.nav-toggle:checked ~ nav{  
+  transform: scale(1,1);
+
+}
+
+.nav-toggle:checked ~ nav a{
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+/* class selector */
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px;
+  left: -9999px;
+  display: none;
+}
+
+header a{
+  margin-right: 11px;
+  padding-bottom: 10px;
+  
+}
+
+
+/* class selector */
+.nav-toggle-label{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-left: 1em;
+  height: 99%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span, 
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before{
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after{
+  top: 7px;
+}
+
+
+/* class selector */
+img.profile{
+  display: grid;
+  align-content: center;
+  height: 250px;
+  left: 200px;
+  top: 80px;
+  left:60px;
+  margin-left: 70px;
+
+}
+.logo{
+  align-items: flex-start;
+  height: 50px;
+padding-top: 5px;
+padding-left: 0;}
+
+a.main-logo{
+  margin-left: 40px;
+  padding-top: 10px;
+}
+
+div.quote{
+  display: flex;
+  width:40%;
+  margin-top:200px;
+  margin-left:50px;
+  align-items: center;
+ 
+  
+}
+.slider-quote{
+  float:left;
+
+  margin-top:120px;
+  margin-left:50px;
+  width: 576px;
+  height: 279px;
+  left: 102px;
+  top: 255px;
+  
+  overflow: hidden;
+  
+}
+
+.slider-quote ul{
+  padding-top:100px;
+  color: #CAC9C7;
+  font-size: 200%;
+  font-family: 'Varela', sans-serif;
+  list-style: none;
+  display:flex;
+  width:500%;
+  animation: change 10s infinite alternate;
+  
+  
+}
+
+.slider-quote li{
+  width: 100%;
+}
+
+.slider-quote q{
+  width: 110%;
+}
+.slider-quote li{
+  width: 575px;
+
+}
+
+@keyframes change {
+  0% {margin-left: 0;}
+  20% {margin-left: 0;}
+
+  25% {margin-left: -99%;}
+  45% {margin-left: -99%;}
+
+  50% {margin-left: -198%;}
+  70% {margin-left: -198%;}
+
+  75% {margin-left: -299%;}
+  100% {margin-left: -299%;}
+
+
+
+}
+
+section.main{
+  display:flex;
+  flex-direction: column;
+  height: 750px;
+}
+
+
+
+@media screen and (min-width:800px){
+  .nav-toggle-label{
+    display: none;
+
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px,4fr) 1fr;
+  }
+
+
+
+.logo{
+  grid-column: 2/3 ;
+}
+
+nav {
+  all:unset;
+  grid-column: 3/5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-right: 50px;
+  
+}
+
+nav ul{
+  display: flex;
+
+}
+nav li{
+  margin-left: 5em;
+  margin-bottom: 0;
+}
+
+nav a{
+  opacity: 1;
+  position: relative;
+}
+nav a::before{
+  content: '';
+  display: block;
+  height: 5px;
+  background:#CAC9C7;
+  position: absolute;
+  top:-.75em;
+  left: 0;
+  right: 0;
+  transform:scale(0,1);
+  transition: transformm ease-in-out 250ms;
+
+}
+nav a:hover::before{
+  transform: scale(1,1);
+}
+img.profile{
+  margin-left: 180px;
+  padding-left: 100px;
+  margin-right:50px;
+  position: absolute;
+  height: 550px;
+  left: 500px;
+  top: 80px;
+}
+
+
+
+p{
+  color: #CAC9C7;
+  font-size: 40px;
+}
+
+
+a.main-logo{
+  margin-left: 50px;
+  padding-top: 10px;
+  
+}
+
+div.main-sign{
+  width: 50%;
+  height: 50%;
+  padding-top: 50px;
+}
+
+
+img.sign{
+  
+  width: 279px;
+  height: 180px;
+  justify-content: flex-end;
+  padding-left: 50px;
+
+
+
+}
+}
+@media screen and (max-width:480px){
+  section.main{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  img.profile{
+    justify-content: center;
+    align-content: center;
+  
+    
+    height: 450px;
+    left:300px;
+    
+  }
+
+  a.main-logo{
+    margin-right: 800px;
+  }
+  img.sign{
+
+    display:none;
+}
+.slider-quote{
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#timeline{
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 900%;
+  margin-top:80px;
+
+  margin-right: 80px;
+
+}
+section.books{
+  width: 130%;
+  overflow: scroll;
+}
+
+}
+
+
+/*
+carrucel
+
+*/
+p{
+  font-size: 18px;
+}
+p.f2{
+  text-align: center;
+}
+
+#timeline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black
+}
+#timeline:hover .tl-item {
+  width: 23.3333%;
+}
+
+.tl-item {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  position: relative;
+  width: 25%;
+  height: 100vh;
+  min-height: 600px;
+  color: #fff;
+  overflow: hidden;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+.tl-item:before, .tl-item:after {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.tl-item:after {
+  background: rgba(3, 22, 37, 0.85);
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.tl-item:before {
+  background: -webkit-linear-gradient(top, transparent 0%, black 100%);
+  background: linear-gradient(to bottom, transparent 0%, black 100%);
+  z-index: 1;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0) translateY(50%);
+          transform: translate3d(0, 0, 0) translateY(50%);
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.tl-item:hover {
+  width: 30% !important;
+}
+.tl-item:hover:after {
+  opacity: 0;
+}
+.tl-item:hover:before {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) translateY(0);
+          transform: translate3d(0, 0, 0) translateY(0);
+  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease 0.25s;
+  transition: opacity 1s ease, -webkit-transform 1s ease 0.25s;
+  transition: opacity 1s ease, transform 1s ease 0.25s;
+  transition: opacity 1s ease, transform 1s ease 0.25s, -webkit-transform 1s ease 0.25s;
+}
+.tl-item:hover .tl-content {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.75s ease 0.5s;
+  transition: all 0.75s ease 0.5s;
+}
+.tl-item:hover .tl-bg {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.tl-content {
+  -webkit-transform: translate3d(0, 0, 0) translateY(25px);
+          transform: translate3d(0, 0, 0) translateY(25px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 1.618em;
+  top: 55%;
+  opacity: 0;
+}
+.tl-content h1 {
+  font-family: 'Varela', sans-serif;
+  text-transform: uppercase;
+  color: black;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.tl-year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.tl-year p {
+  font-family: 'Varela', sans-serif;
+  font-size: 24px;
+
+}
+
+.tl-bg {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transition: -webkit-filter 0.5s ease;
+  transition: -webkit-filter 0.5s ease;
+  transition: filter 0.5s ease;
+  transition: filter 0.5s ease, -webkit-filter 0.5s ease;
+  -webkit-filter: black;
+          filter: grayscale(100%);
+}
+
+.books{
+  margin: 0 90px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: 'Varela', sans-serif;
+  font-size: 10px;
+ 
+
+}
+a:link, a:visited, a:active{
+  text-decoration: none;
+}
+p.brief{
+  text-align: left;
+  font-size: 10px;
+  padding-top: 10px;
+}
+
+h1.movie{
+  font-size: 30px;
+  color: #CAC9C7;
+}
+
+a.buttom{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  margin:0 45px ;
+  width: 150px;
+  align-content: center;
+  background-color: yellow;
+  font-style: normal;
+  margin-top: 100px;
+  text-underline-offset:unset;
+}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 300px;
+  
+  margin-top: 30px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color:black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+section.film {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+  
+}
+
+  
+.container{
+  margin-top:100px ;  
+  background-color:black;
+  width: 800px;
+  padding: 30px;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.slider{
+  position: relative;
+  width: 800px;
+  height: 500px;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background:#000
+    ;
+}
+
+ul.slider li img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+    padding-top: 5px;
+}
+
+.menu{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+
+}
+
+.menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 10px;
+  width: 1px;
+  height: 1px;
+  border-radius: 100%;
+  margin:0 ;
+}
+
+
+  
+  
+footer{
+  color:black;
+  text-align: center;
+  font-size: .8em;
+  padding: 1em;
+  font-family: 'Varela', sans-serif;
+  background-color: gray;
+
+}
+/*
+body{
+  margin: 0;
+  background: #000;
+  font-family: 'Varela', sans-serif;
+}
+
+
+header{
+  background:#000;
+  width: 80%;
+  margin: 0 auto;
+
+}
+header::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  margin-top: 10px;
+  
+}
+.namelogo{
+  margin-top: 8px;
+  float: left;
+  font-size: 30px
+}
+
+nav{
+  float: right;
+}
+
+nav ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+
+}
+
+nav li{
+  display: inline-block;
+  margin-left:50px;
+  margin-right:35px ; 
+  margin-top:15px;
+
+}
+
+
+
+nav a {
+  color:#CAC9C7;
+  text-decoration: none;
+  font-size: 30px
+}
+
+header div {
+  color:#CAC9C7;
+  text-decoration: none;
+  font-size: 30px;
+  margin-left:20px;
+  margin-right:20px ; 
+  padding-top: 10px;
+  
+}
+
+header a{
+  color:#CAC9C7;
+  text-decoration: none;
+  font-size: 30px;
+ 
+}
+  */
+ 
