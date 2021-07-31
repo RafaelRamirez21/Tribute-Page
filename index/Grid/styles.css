@@ -1,7 +1,0 @@
-#layout{
-    display: grid;
-    grid-template-rows: 3em 20px 150px 300px 5em;
-    grid-template-columns: 1fr 20px 150px 20px 150px 20px 150px;
-    
-
-}
