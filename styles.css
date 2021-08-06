@@ -2,10 +2,14 @@
 * {
   margin: 0px;
   padding: 0%;
+  box-sizing: border-box;
+  overflow-x: unset;
+  
 
 }
 body {
   background: #000;
+ 
 }
 
 /* Type selector*/
@@ -87,7 +91,10 @@ header a{
   
 }
 
+img.sign{
 
+  display:none;
+}
 /* class selector */
 .nav-toggle-label{
   position: absolute;
@@ -126,15 +133,14 @@ header a{
 
 
 /* class selector */
-img.profile{
-  display: grid;
-  align-content: center;
-  height: 250px;
-  left: 200px;
-  top: 80px;
-  left:60px;
-  margin-left: 70px;
-
+figure.profile {
+  background-image: url(https://juanosborne.com/wp-content/uploads/2012/08/JO-D-120814-IsaacAsimov.jpg);
+  width: 80vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  align-self: center;
 }
 .logo{
   align-items: flex-start;
@@ -156,19 +162,13 @@ div.quote{
  
   
 }
-.slider-quote{
-  float:left;
+.slider-quote {
+    width: 70vw;
+   overflow: hidden;
+    align-self: center;
+  }
+  
 
-  margin-top:120px;
-  margin-left:50px;
-  width: 576px;
-  height: 279px;
-  left: 102px;
-  top: 255px;
-  
-  overflow: hidden;
-  
-}
 
 .slider-quote ul{
   padding-top:100px;
@@ -183,16 +183,12 @@ div.quote{
   
 }
 
-.slider-quote li{
-  width: 100%;
-}
-
 .slider-quote q{
   width: 110%;
 }
-.slider-quote li{
-  width: 575px;
-
+.slider-quote li {
+  width: 72vw;
+  height: 13vh;
 }
 
 @keyframes change {
@@ -214,22 +210,61 @@ div.quote{
 
 section.main{
   display:flex;
+  /* flex-wrap: wrap; */
   flex-direction: column;
-  height: 750px;
+  height: 100vh;
+
 }
 
-
+#timeline {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
 
 @media screen and (min-width:800px){
   .nav-toggle-label{
     display: none;
 
   }
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto minmax(600px,4fr) 1fr;
+  .slider-quote li {
+    width: 38vw;
+    height: 13vh;
+}
+  body{
+    overflow-x: hidden;
   }
+  .slider-quote {
+    width: 37vw;
+   overflow: hidden;
+    align-self: center;
+  }
+  
+  figure.profile{
+    background-image: url('https://juanosborne.com/wp-content/uploads/2012/08/JO-D-120814-IsaacAsimov.jpg');
+    width: 28vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-position: center;
+  }
+  header {
+    display: flex;
+   margin: auto;
+   justify-content: space-between;
+   height: 0;
+  }
+  section.main {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    height: 100vh;
+    justify-content: space-evenly;
+}
+img.sign{
 
+  display:block;
+}
 
 
 .logo{
@@ -251,10 +286,7 @@ nav ul{
   display: flex;
 
 }
-nav li{
-  margin-left: 5em;
-  margin-bottom: 0;
-}
+
 
 nav a{
   opacity: 1;
@@ -276,15 +308,7 @@ nav a::before{
 nav a:hover::before{
   transform: scale(1,1);
 }
-img.profile{
-  margin-left: 180px;
-  padding-left: 100px;
-  margin-right:50px;
-  position: absolute;
-  height: 550px;
-  left: 500px;
-  top: 80px;
-}
+
 
 
 
@@ -318,19 +342,10 @@ img.sign{
 
 }
 }
-@media screen and (max-width:480px){
+/* @media screen and (max-width:480px){
   section.main{
     display: flex;
     flex-direction: column-reverse;
-  }
-  img.profile{
-    justify-content: center;
-    align-content: center;
-  
-    
-    height: 450px;
-    left:300px;
-    
   }
 
   a.main-logo{
@@ -361,7 +376,7 @@ section.books{
   overflow: scroll;
 }
 
-}
+} */
 
 
 /*
@@ -382,19 +397,17 @@ p.f2{
   background-color: black
 }
 #timeline:hover .tl-item {
-  width: 23.3333%;
+  width: 100vw;
 }
 
 .tl-item {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   position: relative;
-  width: 25%;
+  width: 100vw;
   height: 100vh;
   min-height: 600px;
   color: #fff;
   overflow: hidden;
-  -webkit-transition: width 0.5s ease;
   transition: width 0.5s ease;
 }
 .tl-item:before, .tl-item:after {
@@ -418,26 +431,21 @@ p.f2{
   background: linear-gradient(to bottom, transparent 0%, black 100%);
   z-index: 1;
   opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0) translateY(50%);
-          transform: translate3d(0, 0, 0) translateY(50%);
-  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transform: translate3d(0, 0, 0) translateY(50%);
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 .tl-item:hover {
-  width: 30% !important;
+  width: 100vw !important;
 }
 .tl-item:hover:after {
   opacity: 0;
 }
 .tl-item:hover:before {
   opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0) translateY(0);
-          transform: translate3d(0, 0, 0) translateY(0);
-  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease 0.25s;
-  transition: opacity 1s ease, -webkit-transform 1s ease 0.25s;
-  transition: opacity 1s ease, transform 1s ease 0.25s;
+  transform: translate3d(0, 0, 0) translateY(0);
+ transition: opacity 1s ease, transform 1s ease 0.25s;
   transition: opacity 1s ease, transform 1s ease 0.25s, -webkit-transform 1s ease 0.25s;
 }
 .tl-item:hover .tl-content {
@@ -606,9 +614,9 @@ section.film {
 }
 
 ul, li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 6vw 0;
+  list-style: none;
 }
 
 ul.slider{
@@ -667,7 +675,9 @@ ul.slider li:target {
   margin:0 ;
 }
 
-
+.format-video{
+  width: 50vw;
+}
   
   
 footer{
